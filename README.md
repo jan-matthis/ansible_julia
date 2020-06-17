@@ -11,7 +11,7 @@ Linux x86 64-bit system
 ## Installation
 
 ```commandline
-$ ansible-galaxy install jan-matthis.julia
+$ ansible-galaxy install jan_matthis.julia
 ```
 
 ## Variables
