@@ -1,6 +1,6 @@
 # Julia
 
-Ansible role to install [Julia](https://julialang.org) binaries
+Ansible role to install [Julia](https://julialang.org) binaries.
 
 
 ## Requirements
@@ -14,7 +14,7 @@ Linux x86 64-bit system
 $ ansible-galaxy install jan-matthis.julia
 ```
 
-## Role Variables
+## Variables
 
 ```yaml
 # Version
@@ -68,7 +68,7 @@ Installation on a server without administrator rights:
 
 ## Testing
 
-Tests can be run using `molecule` and `docker`, see [https://molecule.readthedocs.io].
+Tests can be run using `molecule` and `docker`, see [`molecule` documentation](https://molecule.readthedocs.io/en/latest/).
 
 
 ## License
