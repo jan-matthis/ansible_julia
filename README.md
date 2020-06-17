@@ -1,11 +1,6 @@
 # Julia
 
-Ansible role to install [Julia](https://julialang.org) binaries.
-
-
-## Requirements
-
-Linux system
+Ansible role to install [Julia](https://julialang.org) on Linux.
 
 
 ## Installation
