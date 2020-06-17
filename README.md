@@ -40,14 +40,14 @@ julia_symlink_dir: "/usr/local"
 julia_path_append: false
 julia_path_append_file: "{{ansible_env.HOME}}/.profile"
 
-# Temporary directory for storing and unpacking tarball
-julia_dir_download: "/tmp"
-
 # Mirror
 julia_mirror: "https://julialang-s3.julialang.org"
 
+# Temporary directory for storing and unpacking tarball
+julia_download_dir: "/tmp"
+
 # Timeout for download
-julia_tarball_download_timeout: 600
+julia_download_timeout: 600
 ```
 
 
