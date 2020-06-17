@@ -1,6 +1,6 @@
 galaxy_info:
   role_name: julia
-  description: Installs Julia binaries on Linux systems
+  description: Installs Julia on Linux
   author: Jan-Matthis Lueckmann
   license: MIT
   min_ansible_version: 2.5
