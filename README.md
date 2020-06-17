@@ -5,7 +5,7 @@ Ansible role to install [Julia](https://julialang.org) binaries.
 
 ## Requirements
 
-Linux x86 64-bit system
+Linux system
 
 
 ## Installation
