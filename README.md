@@ -68,7 +68,7 @@ Installation on a server without administrator rights:
 
 ## Testing
 
-Tests can be run using `molecule` and `docker`, see [`molecule` documentation](https://molecule.readthedocs.io/en/latest/).
+Tests can be run using [`molecule`](https://molecule.readthedocs.io/en/latest/) and `docker`.
 
 
 ## License
