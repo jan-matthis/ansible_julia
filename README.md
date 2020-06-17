@@ -58,7 +58,7 @@ Installation on a server without administrator rights:
 ```yaml
 - hosts: servers
   include_role:
-    name: jan-matthis.julia
+    name: jan_matthis.julia
   vars:
     julia_dir: "{{ ansible_env.HOME }}/julia"
     julia_symlink: false
