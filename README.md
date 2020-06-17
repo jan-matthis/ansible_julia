@@ -1,6 +1,6 @@
 # Julia
 
-Ansible role that installs [Julia](https://julialang.org) binaries for Linux x86 64-bit systems.
+Ansible role to install [Julia](https://julialang.org) binaries
 
 
 ## Requirements
