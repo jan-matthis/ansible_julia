@@ -51,7 +51,7 @@ julia_tarball_download_timeout: 600
 ```
 
 
-## Example Playbook
+## Example
 
 Installation on a server without administrator rights:
 
