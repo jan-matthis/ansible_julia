@@ -1,0 +1,55 @@
+---
+
+- name: Check whether Julia is present
+  stat: "path={{ julia_dir }}/bin"
+  register: julia_bin_dir
+  changed_when: false
+
+- name: Download tarball
+  get_url:
+    url: "{{ julia_tarball_url }}"
+    dest: "{{ julia_dir_download }}/{{ julia_tarball }}"
+    checksum: "{{ julia_tarball_checksum }}"
+    timeout: "{{ julia_tarball_download_timeout }}"
+  when: not julia_bin_dir.stat.exists
+
+- name: Extract tarball
+  unarchive:
+    src: "{{ julia_dir_download }}/{{ julia_tarball }}"
+    dest: "{{ julia_dir_download }}"
+    remote_src: yes
+  when: not julia_bin_dir.stat.exists
+
+- name: Remove tarball
+  file:
+    path: "{julia_dir_download }}/{{ julia_tarball }}"
+    state: absent
+  when: not julia_bin_dir.stat.exists
+
+- name: Move binaries
+  command: "mv {{ julia_dir_download }}/julia-{{ julia_version.major }}.{{ julia_version.minor }}.{{ julia_version.build }} {{ julia_dir }}"
+  when: not julia_bin_dir.stat.exists
+
+- name: Create symbolic link
+  become: yes
+  become_user: root
+  with_items:
+    - julia
+  file:
+    src: '{{ julia_dir }}/bin/{{ item }}'
+    dest: '{{ julia_symlink_dir }}/bin/{{ item }}'
+    state: link
+  when: julia_symlink
+
+- name: Append to PATH
+  blockinfile:
+    path: "{{ julia_path_append_file }}"
+    state: present
+    create: yes
+    block: |
+      # Julia
+      if [ -d "{{ julia_dir }}/bin" ] ; then
+          export PATH="{{ julia_dir }}/bin:$PATH"
+      fi
+    marker: '# {mark} ANSIBLE MANAGED BLOCK jan-matthis.julia'
+  when: julia_path_append

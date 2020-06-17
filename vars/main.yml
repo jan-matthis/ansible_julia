@@ -1,0 +1,5 @@
+---
+
+julia_tarball: julia-{{ julia_version.major }}.{{ julia_version.minor }}.{{ julia_version.build }}-linux-x86_64.tar.gz
+julia_tarball_url: "{{ julia_mirror }}/bin/linux/x64/{{julia_version.major}}.{{julia_version.minor}}/{{julia_tarball}}"
+julia_tarball_checksum: "{{ julia_tarball_checksums[julia_tarball] }}"

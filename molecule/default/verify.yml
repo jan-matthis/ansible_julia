@@ -1,0 +1,14 @@
+---
+- name: Verify
+  hosts: all
+  tasks:
+  - name: Check Julia version by execution
+    command: "julia --version"
+    register: julia_exec_version
+    changed_when: false
+  - name: Include role default variables
+    include_vars:
+      file: ../../defaults/main.yml
+  - name: Assert correct version
+    assert:
+      that: julia_exec_version.stdout == "julia version {{ julia_version.major }}.{{ julia_version.minor }}.{{ julia_version.build }}"
