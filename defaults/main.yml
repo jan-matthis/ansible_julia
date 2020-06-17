@@ -7,6 +7,9 @@ julia_version:
   minor: 4
   build: 2
 
+# Tarball
+julia_tarball: julia-{{ julia_version.major }}.{{ julia_version.minor }}.{{ julia_version.build }}-linux-x86_64.tar.gz
+
 # Checksums
 # Obtainable via: https://julialang-s3.julialang.org/bin/checksums/julia-X.X.X.md5
 julia_tarball_checksums:
@@ -25,6 +28,9 @@ julia_path_append_file: "{{ansible_env.HOME}}/.profile"
 
 # Mirror
 julia_mirror: "https://julialang-s3.julialang.org"
+
+# URL for downloading tarball
+julia_download_url: "{{ julia_mirror }}/bin/linux/x64/{{julia_version.major}}.{{julia_version.minor}}/{{julia_tarball}}"
 
 # Temporary directory for storing and unpacking tarball
 julia_download_dir: "/tmp"

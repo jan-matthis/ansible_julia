@@ -7,7 +7,7 @@
 
 - name: Download tarball
   get_url:
-    url: "{{ julia_tarball_url }}"
+    url: "{{ julia_download_url }}"
     dest: "{{ julia_download_dir }}/{{ julia_tarball }}"
     checksum: "{{ julia_tarball_checksum }}"
     timeout: "{{ julia_download_timeout }}"
