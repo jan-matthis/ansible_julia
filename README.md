@@ -53,8 +53,6 @@ julia_download_timeout: 600
 
 ## Example
 
-Installation on a server without administrator rights:
-
 ```yaml
 - hosts: servers
   include_role:
